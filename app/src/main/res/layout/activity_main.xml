@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NoskNet Diagnostic"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Milestone 1 — VPN Capture Protótipo"
+        android:textColor="@color/gray"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Status Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ESTADO DA VPN"
+                android:textColor="@color/gray"
+                android:textSize="11sp"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:id="@+id/tvVpnStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="VPN: DESLIGADA"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFreeFireStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Free Fire: não detectado"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvPacketCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Pacotes: 0"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvLastLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="#90A4AE"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:maxLines="4"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Botões -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartVpn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:text="INICIAR CAPTURA"
+        android:textSize="15sp"
+        app:backgroundTint="@color/green"
+        app:cornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/cardStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStopVpn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:text="PARAR CAPTURA"
+        android:textSize="15sp"
+        android:enabled="false"
+        app:backgroundTint="@color/red"
+        app:cornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnStartVpn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Info -->
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="• Apenas o tráfego do Free Fire (com.dts.freefireth) passa pela VPN\n• Outros apps não são afetados\n• Payload nunca é armazenado\n• Milestone 1: apenas prova de conectividade + passthrough"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintTop_toBottomOf="@id/btnStopVpn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

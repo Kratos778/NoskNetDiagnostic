@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoskNet Diagnostic</string>
+    <string name="vpn_notification_title">NoskNet Diagnostic</string>
+    <string name="vpn_notification_text">Capturando tráfego do Free Fire</string>
+    <string name="vpn_channel_name">VPN Capture</string>
+    <string name="vpn_channel_description">Notificação do serviço de captura de rede</string>
+</resources>
